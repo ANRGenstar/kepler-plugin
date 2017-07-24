@@ -6,6 +6,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import core.metamodel.pop.APopulationAttribute;
+import fr.genstar.GoSPTypes;
 import gospl.io.insee.ReadINSEEDictionaryUtils;
 import ptolemy.actor.lib.Source;
 import ptolemy.data.ObjectToken;
@@ -29,6 +30,7 @@ public class ReadDictionnaryFromINSEEWebsiteActor extends Source {
 		paramURL = new FileParameter(this, "url", false);
 		paramURL.setExpression("https://www.insee.fr/fr/statistiques/2863607?sommaire=2867825#dictionnaire");
 
+		output.setTypeEquals(GoSPTypes.GOSPL_DICTIONARY);
 	}
 	
 

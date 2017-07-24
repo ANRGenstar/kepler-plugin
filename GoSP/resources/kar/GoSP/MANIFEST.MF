@@ -16,3 +16,18 @@ Name: Actors/Output/WriteSampleCSV.xml
 lsid: urn:lsid:kepler-project.org:actor:1003:1
 type: ptolemy.kernel.ComponentEntity
 handler: org.kepler.kar.handlers.ActorMetadataKAREntryHandler
+
+Name: Actors/Input/ReadSampleFromDBFActor.xml
+lsid: urn:lsid:kepler-project.org:actor:1004:1
+type: ptolemy.kernel.ComponentEntity
+handler: org.kepler.kar.handlers.ActorMetadataKAREntryHandler
+
+Name: Actors/Input/ReadBayesianNetworkFromXMLBIF.xml
+lsid: urn:lsid:kepler-project.org:actor:1005:1
+type: ptolemy.kernel.ComponentEntity
+handler: org.kepler.kar.handlers.ActorMetadataKAREntryHandler
+
+Name: Actors/Transform/SR/BayesianNetworkSamplerFromScratchActor.xml
+lsid: urn:lsid:kepler-project.org:actor:1006:1
+type: ptolemy.kernel.ComponentEntity
+handler: org.kepler.kar.handlers.ActorMetadataKAREntryHandler

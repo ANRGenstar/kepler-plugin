@@ -10,6 +10,7 @@ import org.apache.commons.logging.LogFactory;
 import core.configuration.GenstarConfigurationFile;
 import core.configuration.GenstarXmlSerializer;
 import core.metamodel.pop.APopulationAttribute;
+import fr.genstar.GoSPTypes;
 import gospl.io.insee.ReadINSEEDictionaryUtils;
 import ptolemy.actor.lib.Source;
 import ptolemy.data.ObjectToken;
@@ -31,6 +32,8 @@ public class ReadDictionnaryFromMODActor extends Source {
 		// add parameters
 		paramFileData = new FileParameter(this, "paramFileData", false);
 		
+		output.setTypeEquals(GoSPTypes.GOSPL_DICTIONARY);
+
 	}
 	
 
@@ -50,7 +53,7 @@ public class ReadDictionnaryFromMODActor extends Source {
 
 		
 		
-		output.send(0, new ObjectToken(attributes));
+		output.send(0, new ObjectToken(attributes, attributes.getClass()));
 		
 	}
 

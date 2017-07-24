@@ -12,6 +12,7 @@ import core.metamodel.pop.APopulationValue;
 import core.metamodel.pop.io.GSSurveyType;
 import fr.genstar.GoSPTypes;
 import fr.genstar.gospl.AbstractWriter;
+import gospl.GosplPopulation;
 import gospl.io.GosplSurveyFactory;
 import gospl.io.exception.InvalidSurveyFormatException;
 import ptolemy.data.ObjectToken;
@@ -47,7 +48,7 @@ public class CSVSampleWriterActor extends AbstractWriter {
 		String paramSep = sep.getValueAsString();
 
 		// retrieve inputs
-		IPopulation<APopulationEntity, APopulationAttribute, APopulationValue> population = (IPopulation)((ObjectToken)portInput.get(0)).getValue();	
+		GosplPopulation population = (GosplPopulation)((ObjectToken)portInput.get(0)).getValue();	
 
 		// TODO char sep
 		final GosplSurveyFactory sf = new GosplSurveyFactory(0, paramSep.charAt(0), 1, 1);
