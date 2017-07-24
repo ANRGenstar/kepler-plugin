@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<entity name="Dictionary from INSEE MOD file" class="ptolemy.kernel.ComponentEntity">
+<entity name="Sample from CSV file" class="ptolemy.kernel.ComponentEntity">
 
-	<property name="entityId"  value="urn:lsid:kepler-project.org:actor:1001:1" class="org.kepler.moml.NamedObjId"/>
+	<property name="entityId"  value="urn:lsid:kepler-project.org:actor:1007:1" class="org.kepler.moml.NamedObjId"/>
 
 	<property name="KeplerDocumentation" class="ptolemy.vergil.basic.KeplerDocumentationAttribute">
 
@@ -17,7 +17,7 @@
 	</property>
 
 
-	<property name="class" value="fr.genstar.gospl.input.ReadDictionnaryFromMODActor" class="ptolemy.kernel.util.StringAttribute">
+	<property name="class" value="fr.genstar.gospl.input.ReadSampleFromCSVActor" class="ptolemy.kernel.util.StringAttribute">
 		<property name="id" value="null" class="ptolemy.kernel.util.StringAttribute"/>
 	</property>
 

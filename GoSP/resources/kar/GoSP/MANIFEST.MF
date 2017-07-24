@@ -31,3 +31,13 @@ Name: Actors/Transform/SR/BayesianNetworkSamplerFromScratchActor.xml
 lsid: urn:lsid:kepler-project.org:actor:1006:1
 type: ptolemy.kernel.ComponentEntity
 handler: org.kepler.kar.handlers.ActorMetadataKAREntryHandler
+
+Name: Actors/Input/ReadSampleFromCSVActor.xml
+lsid: urn:lsid:kepler-project.org:actor:1007:1
+type: ptolemy.kernel.ComponentEntity
+handler: org.kepler.kar.handlers.ActorMetadataKAREntryHandler
+
+Name: Actors/Input/ReadDictionnaryFromBayesianNetworkActor.xml
+lsid: urn:lsid:kepler-project.org:actor:1008:1
+type: ptolemy.kernel.ComponentEntity
+handler: org.kepler.kar.handlers.ActorMetadataKAREntryHandler
