@@ -15,8 +15,10 @@ import core.metamodel.pop.APopulationAttribute;
 import core.metamodel.pop.io.GSSurveyType;
 import core.metamodel.pop.io.IGSSurvey;
 import fr.genstar.GoSPTypes;
+import fr.genstar.ReadSampleFromCSV;
 import gospl.GosplPopulation;
 import gospl.distribution.GosplInputDataManager;
+import gospl.io.CsvInputHandler;
 import gospl.io.GosplSurveyFactory;
 import gospl.io.exception.InvalidSurveyFormatException;
 import ptolemy.actor.TypedAtomicActor;
@@ -51,6 +53,7 @@ public class ReadSampleFromCSVActor extends TypedAtomicActor {
 
 	public enum CSVSeparators {
 		
+		AUTO		("automatic", '-'),
 		COMMA 		(','),
 		SEMICOLUMN 	(';'),
 		COLUMN 		(':'),
@@ -137,9 +140,18 @@ public class ReadSampleFromCSVActor extends TypedAtomicActor {
 			maxToRead = Integer.parseInt(maxToReadString);
 		
 
-		char separator = ((CSVSeparators)paramSeparator.getChosenValue()).sep;
+		CSVSeparators sepChoice = (CSVSeparators)paramSeparator.getChosenValue();
+		char separator = sepChoice.sep;
 		int firstLine = ((IntToken)paramFirstLineData.getToken()).intValue();
 		int firstCol = ((IntToken)paramFirstColData.getToken()).intValue();
+		
+		if (sepChoice == CSVSeparators.AUTO) {
+			try {
+				separator = CsvInputHandler.detectSeparator(fileData);
+			} catch (IOException e) {
+				throw new RuntimeException("error while trying to detect separator from file "+fileData, e);
+			}
+		}
 		
 		// configure the survey factory with the right parameters
 		GosplSurveyFactory factory = new GosplSurveyFactory(
