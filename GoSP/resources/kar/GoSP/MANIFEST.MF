@@ -1,0 +1,13 @@
+Manifest-Version: 1.4.2
+KAR-Version: 2.0
+lsid: urn:lsid:kepler-project.org:GoSP:1:2
+
+Name: Actors/ReadDictionnaryFromMODActor.xml
+lsid: urn:lsid:kepler-project.org:actor:1001:1
+type: ptolemy.kernel.ComponentEntity
+handler: org.kepler.kar.handlers.ActorMetadataKAREntryHandler
+
+Name: Actors/ReadDictionnaryFromINSEEWebsiteActor.xml
+lsid: urn:lsid:kepler-project.org:actor:1002:1
+type: ptolemy.kernel.ComponentEntity
+handler: org.kepler.kar.handlers.ActorMetadataKAREntryHandler
