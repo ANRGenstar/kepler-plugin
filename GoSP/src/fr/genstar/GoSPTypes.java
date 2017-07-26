@@ -20,35 +20,13 @@ import ptolemy.kernel.util.IllegalActionException;
 public class GoSPTypes {
 
 
-    public static class DistributionBuilderType extends ObjectType {
-
-		public DistributionBuilderType() {
-			super();
-		}
-
-		public DistributionBuilderType(Class<?> valueClass) {
-			super(valueClass);
-		}
-
-		public DistributionBuilderType(Object value, Class<?> valueClass) throws IllegalActionException {
-			super(value, valueClass);
-		}
-    }
-    
-    
-    // TODO
-	public static final Type GOSPL_DISTRIBUTION_BUILDER = new DistributionBuilderType();
-
     public static class PopulationType extends ObjectType {
 
 		public PopulationType() {
-			super();
+			super(GosplPopulation.class);
 		}
-		public PopulationType(Class<?> valueClass) {
-			super(valueClass);
-		}
-		public PopulationType(Object value, Class<?> valueClass) throws IllegalActionException {
-			super(value, valueClass);
+		public PopulationType(Object value) throws IllegalActionException {
+			super(value, GosplPopulation.class);
 		}
     }
 	public static final Type GOSPL_POPULATION = new PopulationType();
@@ -59,28 +37,27 @@ public class GoSPTypes {
 	 */
     public static class BayesianNetworkType extends ObjectType {
 		public BayesianNetworkType() {
-			super(GosplPopulation.class);
+			super(CategoricalBayesianNetwork.class);
 		}
-		public BayesianNetworkType(Object value, Class<?> valueClass) throws IllegalActionException {
-			super(value, GosplPopulation.class);
+		public BayesianNetworkType(Object value) throws IllegalActionException {
+			super(value, CategoricalBayesianNetwork.class);
 		}
     }
-	public static final Type GOSPL_BAYESIAN_NETWORK = new PopulationType();
+	public static final Type GOSPL_BAYESIAN_NETWORK = new BayesianNetworkType();
 	
 
  	
     public static class SampleType extends ObjectType {
 
 		public SampleType() {
-			super(CategoricalBayesianNetwork.class);
+			super(GosplPopulation.class);
 		}
 
 		public SampleType(Object value) throws IllegalActionException {
-			super(value, CategoricalBayesianNetwork.class);
+			super(value, GosplPopulation.class);
 		}
 
     }
-    
 	public static final Type GOSPL_SAMPLE = new SampleType();
 	
 
@@ -100,7 +77,6 @@ public class GoSPTypes {
 	
 	static {
 	
-		BaseType.addType(GOSPL_DISTRIBUTION_BUILDER, 	"distribution_builder", 	ObjectToken.class);
 		BaseType.addType(GOSPL_POPULATION, 				"population", 				ObjectToken.class);
 		BaseType.addType(GOSPL_BAYESIAN_NETWORK, 		"Bayesian_network", 		ObjectToken.class);
 		BaseType.addType(GOSPL_SAMPLE, 					"sample", 					ObjectToken.class);

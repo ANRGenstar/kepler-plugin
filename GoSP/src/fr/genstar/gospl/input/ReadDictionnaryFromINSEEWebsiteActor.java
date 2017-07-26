@@ -31,6 +31,7 @@ public class ReadDictionnaryFromINSEEWebsiteActor extends Source {
 		paramURL.setExpression("https://www.insee.fr/fr/statistiques/2863607?sommaire=2867825#dictionnaire");
 
 		output.setTypeEquals(GoSPTypes.GOSPL_DICTIONARY);
+		output.setMultiport(true);
 	}
 	
 
@@ -46,7 +47,7 @@ public class ReadDictionnaryFromINSEEWebsiteActor extends Source {
 
 		Collection<APopulationAttribute> attributes = ReadINSEEDictionaryUtils.readFromWebsite(urlStr);
 		
-		output.send(0, new ObjectToken(attributes));
+		output.broadcast(new ObjectToken(attributes));
 		
 	}
 

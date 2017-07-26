@@ -5,10 +5,6 @@ import java.io.IOException;
 
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 
-import core.metamodel.IPopulation;
-import core.metamodel.pop.APopulationAttribute;
-import core.metamodel.pop.APopulationEntity;
-import core.metamodel.pop.APopulationValue;
 import core.metamodel.pop.io.GSSurveyType;
 import fr.genstar.GoSPTypes;
 import fr.genstar.gospl.AbstractWriter;
@@ -34,7 +30,6 @@ public class CSVSampleWriterActor extends AbstractWriter {
 		
 		sep = new StringParameter(this, "separator");
 		sep.setExpression(";");
-		
 		
 	}
 	

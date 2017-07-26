@@ -32,7 +32,7 @@ public class SampleFromBayesianNetworkActor extends TypedAtomicActor {
 		
 		outputPopulation = new TypedIOPort(this, "population");
 		outputPopulation.setOutput(true);
-		outputPopulation.setMultiport(false);
+		outputPopulation.setMultiport(true);
 		outputPopulation.setTypeEquals(GoSPTypes.GOSPL_POPULATION);
 		
 		paramPopSize = new StringParameter(this, "population size");
@@ -72,7 +72,7 @@ public class SampleFromBayesianNetworkActor extends TypedAtomicActor {
 		for (int i=0; i<popSize; i++)
 			population.add(new GosplEntity(sampler.draw().getMap()));
 		
-		outputPopulation.send(0, new ObjectToken(population, population.getClass()));
+		outputPopulation.broadcast(new ObjectToken(population, population.getClass()));
 		
 	}
 

@@ -34,6 +34,7 @@ public class ReadDictionnaryFromBayesianNetworkActor extends TypedAtomicActor {
 		
 		outputDictionary = new TypedIOPort(this, "dictionary");
 		outputDictionary.setOutput(true);
+		outputDictionary.setMultiport(true);
 		outputDictionary.setTypeEquals(GoSPTypes.GOSPL_DICTIONARY);
 
 	}
@@ -49,7 +50,7 @@ public class ReadDictionnaryFromBayesianNetworkActor extends TypedAtomicActor {
 		
 		Collection<APopulationAttribute> attributes = ReadDictionaryUtils.readBayesianNetworkAsDictionary(bn);
 		
-		outputDictionary.send(0, new ObjectToken(attributes, attributes.getClass()));
+		outputDictionary.broadcast(new ObjectToken(attributes, attributes.getClass()));
 		
 	}
 

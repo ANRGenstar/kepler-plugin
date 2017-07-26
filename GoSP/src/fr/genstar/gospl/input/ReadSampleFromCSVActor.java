@@ -110,12 +110,12 @@ public class ReadSampleFromCSVActor extends TypedAtomicActor {
 		// define outputs
 		outputPopulation = new TypedIOPort(this, "population");
 		outputPopulation.setOutput(true);
-		outputPopulation.setMultiport(false);
+		outputPopulation.setMultiport(true);
 		outputPopulation.setTypeEquals(GoSPTypes.GOSPL_POPULATION);
 		
 		outputDictionary = new TypedIOPort(this, "updated dictionary");
 		outputDictionary.setOutput(true);
-		outputDictionary.setMultiport(false); // TODO why false ? make it true !
+		outputDictionary.setMultiport(true); 
 		outputDictionary.setTypeEquals(GoSPTypes.GOSPL_DICTIONARY);
 		
 	}
@@ -202,8 +202,8 @@ public class ReadSampleFromCSVActor extends TypedAtomicActor {
 		}
 		
 		// send the data
-		outputPopulation.send(0, new ObjectToken(pop, pop.getClass()));
-		outputDictionary.send(0, new ObjectToken(updatedAttributes, updatedAttributes.getClass()));
+		outputPopulation.broadcast(new ObjectToken(pop, pop.getClass()));
+		outputDictionary.broadcast(new ObjectToken(updatedAttributes, updatedAttributes.getClass()));
 		
 	}
 }

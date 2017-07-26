@@ -33,6 +33,7 @@ public class ReadBayesianNetworkFromXMLBIF extends Source {
 
 		// set output type
 		output.setTypeEquals(GoSPTypes.GOSPL_BAYESIAN_NETWORK);
+		output.setMultiport(true);
 		
 		// add parameters
 		paramFileData = new FileParameter(this, "paramFileData", false);
@@ -56,7 +57,7 @@ public class ReadBayesianNetworkFromXMLBIF extends Source {
 				bn.getNodes().stream().map(v->v.getName()).collect(Collectors.joining(","))
 				);
 		
-		output.send(0, new ObjectToken(bn, bn.getClass()));
+		output.broadcast(new ObjectToken(bn, bn.getClass()));
 		
 	}
 

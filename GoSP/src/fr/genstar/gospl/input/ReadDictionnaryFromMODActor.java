@@ -53,7 +53,7 @@ public class ReadDictionnaryFromMODActor extends Source {
 
 		
 		
-		output.send(0, new ObjectToken(attributes, attributes.getClass()));
+		output.broadcast(new ObjectToken(attributes, attributes.getClass()));
 		
 	}
 

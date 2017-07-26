@@ -41,3 +41,8 @@ Name: Actors/Input/ReadDictionnaryFromBayesianNetworkActor.xml
 lsid: urn:lsid:kepler-project.org:actor:1008:1
 type: ptolemy.kernel.ComponentEntity
 handler: org.kepler.kar.handlers.ActorMetadataKAREntryHandler
+
+Name: Actors/Transform/SR/AugmentWithBayesianNetworkActor.xml
+lsid: urn:lsid:kepler-project.org:actor:1009:1
+type: ptolemy.kernel.ComponentEntity
+handler: org.kepler.kar.handlers.ActorMetadataKAREntryHandler
