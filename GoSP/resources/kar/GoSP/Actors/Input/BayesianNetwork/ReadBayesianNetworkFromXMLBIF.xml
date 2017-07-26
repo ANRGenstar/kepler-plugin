@@ -18,5 +18,6 @@
 </property>
 
 <property name="semanticType00" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:2:1#LocalInput"/>
+<property name="semanticType01" class="org.kepler.sms.SemanticType" value="urn:lsid:localhost:onto:3:1#gosp_input_bn"/>
 
 </entity>
