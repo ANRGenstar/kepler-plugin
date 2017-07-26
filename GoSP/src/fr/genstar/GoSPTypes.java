@@ -2,7 +2,6 @@ package fr.genstar;
 
 import java.util.Collection;
 
-import core.metamodel.pop.APopulationAttribute;
 import gospl.GosplPopulation;
 import gospl.algo.sr.bn.CategoricalBayesianNetwork;
 import ptolemy.data.ObjectToken;
